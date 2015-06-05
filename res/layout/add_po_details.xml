@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/parentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/po_outer_layout_margin"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/po_field_margin"
+            android:gravity="center_vertical"
+            android:weightSum="2" >
+
+            <TextView
+                android:id="@+id/labelPOTimestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_timestamp"
+                android:layout_marginRight="@dimen/po_field_margin"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPOTimestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+             />
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <TextView
+                android:id="@+id/tvPONumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/label_po_no"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etPONumber"
+                android:layout_width="100dp"
+                android:layout_height="@dimen/edittext_height"
+                android:layout_marginRight="@dimen/po_field_margin"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_style"
+                android:inputType="number" />
+
+            <requestFocus />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvPOSuplName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_supplier_name"
+                android:textStyle="bold" />
+
+            <Spinner 
+                android:id="@+id/spinnerSuplName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edittext_height" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvPOProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_product_name"
+                android:textStyle="bold" />
+
+<!--             <EditText -->
+<!--                 android:id="@+id/etPOProductName" -->
+<!--                 android:layout_width="match_parent" -->
+<!--                 android:layout_height="@dimen/edittext_height" -->
+<!--                 android:background="@drawable/edittext_style" -->
+<!--                 android:inputType="textCapWords" > -->
+<!--             </EditText> -->
+            
+            <Spinner 
+                android:id="@+id/spinnerProductName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edittext_height" />
+        </LinearLayout>
+
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_quantity"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etQuantity"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:inputType="numberDecimal" >
+            </EditText>
+        </LinearLayout>
+
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvPOPaymentTerms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_payment_terms"
+                android:textStyle="bold" />
+
+            <Spinner 
+                android:id="@+id/spinnerPaymentTerms"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edittext_height" />
+        </LinearLayout>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvPOEtdAtd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:text="@string/label_po_etd_atd"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etPOEtdAtd"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:drawableRight="@drawable/ic_calendar"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:hint="@string/hint_select_date"
+                android:inputType="date" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvPOEtaAta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_eta_ata"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etPOEtaAta"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:drawableRight="@drawable/ic_calendar"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:hint="@string/hint_select_date"
+                android:inputType="date" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvDeparturePortName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_departure_port_name"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDeparturePortName"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:inputType="textCapWords" >
+            </EditText>
+        </LinearLayout>
+
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvArrivalPortName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_arrival_port_name"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etArrivalPortName"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:inputType="textCapWords" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <CheckBox
+                android:id="@+id/chkDocSent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_doc_sent"
+                android:textStyle="bold" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/layoutDocTrackNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/tvDocTrackNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_doc_track_no"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDocTrackNo"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:inputType="textCapCharacters" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvDocSentDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_doc_sent_date"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDocSentDate"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:drawableRight="@drawable/ic_calendar"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:hint="@string/hint_select_date"
+                android:inputType="date" >
+            </EditText>
+        </LinearLayout>
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvDocRecvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_doc_recv_date"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDocRecvDate"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:drawableRight="@drawable/ic_calendar"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:hint="@string/hint_select_date"
+                android:inputType="date" >
+            </EditText>
+        </LinearLayout>
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvCustomClearanceDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_custom_clearace_date"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etCustomClearanceDate"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:drawableRight="@drawable/ic_calendar"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:hint="@string/hint_select_date"
+                android:inputType="date" >
+            </EditText>
+        </LinearLayout>
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvFactoryArrivalDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_factory_arrival_date"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etFactoryArrivalDate"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:drawableRight="@drawable/ic_calendar"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:hint="@string/hint_select_date"
+                android:inputType="date" >
+            </EditText>
+        </LinearLayout>
+          
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvSailingDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_sailing_date"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etSailingDate"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:drawableRight="@drawable/ic_calendar"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:hint="@string/hint_select_date"
+                android:inputType="date" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvLastPortName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_last_port_name"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etLastPortName"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:inputType="textCapWords" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvDestinationPortDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_destination_port_date"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDestinationPortDate"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:drawableRight="@drawable/ic_calendar"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:hint="@string/hint_select_date"
+                android:inputType="date" >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_supl_remarks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvSuplRemarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_supl_remarks"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etSuplRemarks"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:inputType="textMultiLine"
+                android:minLines="3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_cust_remarks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_field_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvCustRemarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_po_cust_remarks"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etCustRemarks"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@drawable/edittext_style"
+                android:inputType="textMultiLine"
+                android:minLines="3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/po_outer_layout_margin"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style"
+                android:text="@string/btn_save"
+                style="?android:attr/buttonBarButtonStyle"
+                android:textColor="@color/text_white" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/po_field_margin"
+                android:layout_weight="1"
+                android:background="@drawable/button_style"
+                android:text="@string/btn_cancel"
+                style="?android:attr/buttonBarButtonStyle"
+                android:textColor="@color/text_white" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

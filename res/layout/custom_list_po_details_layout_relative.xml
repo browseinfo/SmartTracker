@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dip" >
+ 
+    <TextView
+        android:id="@+id/tvPONumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+     />
+ 
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tvPONumber"
+        android:layout_below="@id/tvPONumber"
+      />
+ 
+    <TextView
+        android:id="@+id/tvETD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tvProductName"
+        android:layout_below="@id/tvProductName"
+ />
+    
+    <TextView
+        android:id="@+id/tvETA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tvETD"
+        android:layout_below="@id/tvETD"
+ />
+ 
+<!--     <TextView -->
+<!--         android:id="@+id/tvQty" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_alignLeft="@id/tvETA" -->
+<!--         android:layout_below="@id/tvETA" -->
+<!--         android:layout_weight="2" -->
+<!--       /> -->
+    
+<!--     <TextView -->
+<!--         android:id="@+id/tvAction" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_alignLeft="@id/tvETA" -->
+<!--         android:layout_below="@id/tvETA" -->
+<!--       /> -->
+<ImageButton
+     android:id="@+id/btnEdit"
+     android:layout_width="@dimen/table_row_icon"
+     android:layout_height="@dimen/table_row_icon"
+     android:background="@drawable/ic_edit_doc"
+     android:layout_alignBottom="@id/tvETA"
+     android:layout_toEndOf="@id/tvETA"
+     android:layout_toRightOf="@id/tvETA"
+    />
+
+<ImageButton
+     android:id="@+id/btnDelete"
+     android:layout_width="@dimen/table_row_icon"
+     android:layout_height="@dimen/table_row_icon"
+     android:background="@drawable/ic_delete"
+     android:layout_alignBottom="@id/btnEdit"
+     android:layout_toEndOf="@id/btnEdit"
+     android:layout_toRightOf="@id/btnEdit"
+     
+    />
+ </RelativeLayout>

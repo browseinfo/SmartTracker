@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Smart Tracker</string>
+    <string name="action_settings">Settings</string>
+    <string name="actionbar_settings_menu_item_sync">Sync</string>
+    <string name="actionbar_add_po">Add PO</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_add_po_details">Add PO Details</string>
+    <string name="label_po_no">PO No.</string>
+    <string name="label_po_product_name">Product Name</string>
+    <string name="label_po_supplier_name">Supplier Name</string>
+    <string name="label_po_quantity">Quantity (units)</string>
+    <string name="label_po_payment_terms">Payment Terms</string>
+    <string name="label_po_etd_atd">ETD/ATD</string>
+    <string name="label_po_eta_ata">ETA/ATA</string>
+    <string name="label_po_departure_port_name">Departure Port</string>
+    <string name="label_po_arrival_port_name">Arrival Port</string>
+    <string name="label_po_doc_sent">Document Sent</string>
+    <string name="label_po_doc_track_no">Bill of Lading / AWB Number</string>
+    <string name="label_po_doc_sent_date">Shipping Document Sent Date</string>
+    <string name="label_po_doc_recv_date">Shipping Document Recv Date</string>
+    <string name="label_po_custom_clearace_date">Custom Clearance Date</string>
+    <string name="label_po_factory_arrival_date">Material Arrival at Factory Date</string>
+    <string name="label_po_sailing_date">Payment Date</string>
+    <string name="label_po_last_port_name">Last Port Name</string>
+    <string name="label_po_destination_port_date">Last Port Date</string>
+    <string name="label_po_supl_remarks">Supplier\'s Remarks</string>
+    <string name="label_po_cust_remarks">Customer\'s Remarks</string>
+    <string name="label_po_timestamp">Date</string>
+    <string name="label_rdb_viewby_po_no">PO Number</string>
+    <string name="label_rdb_viewby_product_name">Product Name</string>
+    <string name="label_rdb_viewby_po_edt_eda">ETD/ETA</string>
+    <string name="label_tr_action">Action</string>
+    <string name="hint_select_date">Tap to select date</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_login">Login</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="logout">Logout</string>
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+    <string name="desc_list_item_icon">Menu Item Icon</string>
+
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item>@string/label_po_no</item>
+        <item>@string/label_po_product_name</item>
+        <item>@string/label_po_etd_atd</item>
+    </string-array>
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_view1</item>
+        <item>@drawable/ic_view1</item>
+        <item>@drawable/ic_view1</item>
+    </array>
+
+    <string-array name="product_name_list">
+        <item> Gel </item>
+        <item> Steel Tape </item>
+        <item> Water Blocking Tape </item>
+    </string-array>
+    <string-array name="supplier_name_list">
+        <item> Unigel </item>
+        <item> Ninesky </item>
+        <item> SIBER </item>
+    </string-array>
+    <string-array name="payment_terms_list">
+        <item> LC </item>
+        <item> CAD </item>
+        <item> Cons Stock </item>
+    </string-array>
+
+    <string name="title_activity_search_po">SearchPOActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+
+</resources>

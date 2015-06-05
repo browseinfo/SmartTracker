@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item android:state_window_focused = "false" 
+    android:drawable = "@drawable/edittext_normal"   />   
+<item android:state_focused = "true" 
+    android:drawable = "@drawable/edittext_focused"   /> 
+</selector> 
+
+<!-- <shape xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!-- android:thickness="0dp" -->
+<!-- android:shape="rectangle"> -->
+<!-- <stroke android:width="1dp" -->
+<!-- android:color="#9BDDFF"/> -->
+<!-- <corners android:radius="5dp" /> -->
+<!-- <gradient -->
+<!-- android:startColor="#C8C8C8" -->
+<!-- android:endColor="#FFFFFF" -->
+<!-- android:type="linear" -->
+<!-- android:angle="270"/> -->
+<!-- <padding -->
+<!-- android:left="5dp" -->
+<!-- android:top="5dp" -->
+<!-- android:right="5dp" -->
+<!-- android:bottom="5dp" -->
+<!-- /> -->
+<!-- </shape> -->

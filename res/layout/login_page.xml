@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayou"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+    
+
+   <ImageView 
+       android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/logo"
+       />
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="@string/hint_username"
+        android:background="@drawable/edittext_style"
+        android:layout_margin="@dimen/po_outer_layout_margin"
+        android:padding="@dimen/po_outer_layout_margin"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="@string/hint_password"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_style"
+        android:layout_margin="@dimen/po_outer_layout_margin"
+        android:padding="@dimen/po_outer_layout_margin"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/text_white"
+        android:background="@drawable/button_style"
+        android:text="@string/btn_login" />
+</LinearLayout>

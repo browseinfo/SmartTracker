@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="actionbar_bg">#0D70C2</color>
+    <color name="app_dark">#191970</color>
+<!--     <color name="app_light">#0f00C8FE</color> -->
+    <color name="app_light">#ccfff0</color>
+    <color name="btn_gradient_start">#191970</color>
+    <color name="btn_gradient_center">#96B4D7</color>
+    <color name="btn_gradient_end">#030C8F</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="tablerow_border_color">#FFFFFF</color>
+    <color name="tablerow_color">#DCF7FF</color>
+    <color name="disabled_color">#5c5c74</color>
+<!--     <color name="btn_color_light">#48B3FB</color> -->
+<color name="btn_color_light">#0D70C2</color>
+    <color name="selected">#33ffcc</color>
+    
+    <color name="list_item_title">#fff</color>
+<!--     <color name="list_item_title">#303030</color> -->
+<!--     <color name="list_background">#303030</color> -->
+<color name="list_background">#566D7E</color> 
+<!--     <color name="list_background_pressed">#992416</color> -->
+     <color name="list_background_pressed">#4863A0</color>
+     <color name="list_item_pressed">@color/actionbar_bg</color>
+<!--     <color name="list_divider">#272727</color> -->
+    <color name="list_divider">#fff</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+    
+</resources>
