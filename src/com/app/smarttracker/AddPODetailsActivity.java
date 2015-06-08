@@ -820,11 +820,7 @@ public class AddPODetailsActivity extends Activity {
 		int selectedMenuItemId = menuItem.getItemId();
 		switch (selectedMenuItemId) {
 		case R.id.logout:
-			UserSession.clearUserName(getApplicationContext());
-			Intent logout=new Intent(AddPODetailsActivity.this,LoginActivity.class);
-			logout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			startActivity(logout);
-			finish();
+			Utility.destroyUserSession(getApplicationContext());
 			break;
 		default:
 			break;

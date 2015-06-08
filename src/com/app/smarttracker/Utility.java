@@ -7,6 +7,9 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 /**
  * Class which has Utility methods
@@ -139,6 +142,18 @@ public class Utility {
 			Log.e("Utility.java", e.toString());
 		}
 		return formattedDate;
+	}
+	
+	public static void destroyUserSession(Context context) {
+		UserSession.clearUserName(context);
+		Intent intent = new Intent(context, LoginActivity.class);
+		intent.addCategory(Intent.CATEGORY_HOME);
+		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		intent.addFlags(Intent.FLAG_ACTIVITY_TASK_ON_HOME);
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		context.startActivity(intent);
+		
 	}
 
 }

@@ -1,26 +1,15 @@
 package com.app.smarttracker;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.app.smarttracker.dbadapter.DatabaseHelper;
-import com.app.smarttracker.entity.POEntry;
-import com.app.smarttracker.entity.UserAuth;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.app.smarttracker.dbadapter.DatabaseHelper;
 
 public class MainActivity extends Activity {
 	Button btnLogin;
@@ -46,7 +35,7 @@ public class MainActivity extends Activity {
 //			loadRecordsFromServer(params);
 			
 //			Intent nextActivityIntent = new Intent(MainActivity.this, ViewPODetailsActivity.class);
-			Intent nextActivityIntent = new Intent(MainActivity.this, ListPOSummaryActivity.class);
+			Intent nextActivityIntent = new Intent(MainActivity.this, SearchPOActivity.class);
 			nextActivityIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(nextActivityIntent);
 			finish();

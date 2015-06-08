@@ -55,6 +55,7 @@ public class ListPOSummaryActivity extends Activity {
 	RadioButton rdbSelected;
 	String orderByCriteria = "";
 	ListView poList;
+	TextView tvErrorMsg;
 	CustomCursorAdapter dataAdapter;
 	public ProgressDialog prgDialog;
 
@@ -75,24 +76,32 @@ public class ListPOSummaryActivity extends Activity {
 	private ArrayList<NavDrawerItem> navDrawerItems;
 	private NavDrawerListAdapter adapter;
 	String currentUserType;
-	
+	String searchType, searchKeyword;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_view_po_details);
 
+		Bundle bundle = getIntent().getExtras();
+		if(bundle != null && bundle.size() != 0){
+		searchType = bundle.getString("search_type","");
+		searchKeyword = bundle.getString("search_keyword","");
+		}
+		System.out.println("Search Type=== "+searchType);
+		System.out.println("Search Criteria=== "+searchKeyword);
+		
 		dbHelper = new DatabaseHelper(this);
-
 		poList = (ListView)findViewById(R.id.poListView);
-
 		currentUserType = UserSession.getUserType(getApplicationContext());
 
+		tvErrorMsg = (TextView) findViewById(R.id.tvErrorMsg);
+		tvErrorMsg.setVisibility(View.INVISIBLE);
+		
 		initializeSlidingMenu();
 		
 		if (savedInstanceState == null) {
-			// on first time display view for first nav item
-			
+			// on first time display view for first nav item			
 			displayView(0);
 		}
 		prgDialog = new ProgressDialog(this);
@@ -226,7 +235,12 @@ public void displayView(int position) {
 		//		            @Override
 		//		            public void run() {
 		dbHelper.open();
-		dataAdapter = new CustomCursorAdapter(ListPOSummaryActivity.this, dbHelper.fetchAllPOEntries(orderByCriteria));
+		Cursor cursor = dbHelper.fetchAllPOEntries(orderByCriteria, searchType, searchKeyword);
+		if(cursor.getCount() == 0){
+			tvErrorMsg.setVisibility(View.VISIBLE);
+			tvErrorMsg.setText("No match Found!!");
+		}
+		dataAdapter = new CustomCursorAdapter(ListPOSummaryActivity.this, cursor);
 		poList.setAdapter(dataAdapter);
 		poList.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 		dbHelper.close();
@@ -502,10 +516,7 @@ public void displayView(int position) {
 			break;
 			
 		case R.id.logout:
-			UserSession.clearUserName(getApplicationContext());
-			Intent logout=new Intent(ListPOSummaryActivity.this,LoginActivity.class);
-			startActivity(logout);
-			finish();
+			Utility.destroyUserSession(getApplicationContext());
 			break;
 		default:
 			super.onOptionsItemSelected(menuItem);
@@ -515,7 +526,7 @@ public void displayView(int position) {
 	}
 
 	@Override
-	public boolean onPrepareOptionsMenu(Menu menu) {
+	public boolean onPrepareOptionsMenu(Menu menu) { 
 		// if nav drawer is opened, hide the action items
 		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
 //		menu.findItem(R.id.action_settings).setVisible(!drawerOpen);

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/outer_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="@dimen/po_outer_layout_margin"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_search"
+        android:textSize="@dimen/table_row_header_text_size"
+        android:layout_margin="@dimen/po_outer_layout_margin"
+        android:textStyle="bold|italic"
+        />
+
+    <RadioGroup
+        android:id="@+id/rgSearchType"
+        android:layout_margin="@dimen/po_outer_layout_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rdbPONumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_po_no" />
+
+        <RadioButton
+            android:id="@+id/rdbSupplierName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_po_supplier_name" />
+
+        <RadioButton
+            android:id="@+id/rdbProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_po_product_name" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etSearchKeyword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/po_outer_layout_margin"
+        android:hint="@string/hint_search"
+        >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btnSearchPO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/po_outer_layout_margin"
+        android:background="@drawable/button_style"
+        android:textColor="@color/text_white"
+        android:textStyle="bold"
+        android:text="@string/btn_search" />
+    
+    <Button
+        android:id="@+id/btnViewAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/po_outer_layout_margin"
+        android:background="@drawable/button_style"
+        android:textColor="@color/text_white"
+        android:textStyle="bold"
+        android:text="@string/btn_view_all" />
+
+</LinearLayout>

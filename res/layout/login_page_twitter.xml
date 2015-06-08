@@ -60,6 +60,7 @@
           <TextView android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#372c24"
+                android:textStyle="bold"
                 android:text="Username"/>
           <EditText
               android:id="@+id/etUsername" 
@@ -72,6 +73,7 @@
           <TextView android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#372c24"
+                android:textStyle="bold"
                 android:text="Password"/>
           <EditText
               android:id="@+id/etPassword" 

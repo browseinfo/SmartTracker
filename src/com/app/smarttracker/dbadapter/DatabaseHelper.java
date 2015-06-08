@@ -351,7 +351,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		return poList;
 	}
 	
-	public Cursor fetchAllPOEntries(String orderBy) {
+	public Cursor fetchAllPOEntries(String orderBy, String searchField, String searchFieldValue) {
 //		db = this.getReadableDatabase();
 
 		String KEY_ORDER_BY = KEY_PO_NUMBER;
@@ -363,7 +363,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			KEY_ORDER_BY = KEY_PO_NUMBER;
 		}
 		
-		String whereClause = KEY_IS_DELETED + " = ? AND " + KEY_IS_SYNCED + " = ?";
+		String appendSearchCriteria = "";
+		
+		if(searchField != null && !searchField.equalsIgnoreCase("")){
+			String fieldName = KEY_PO_NUMBER;
+			if(searchField.equalsIgnoreCase("Product Name")){
+				fieldName = KEY_PRD_NAME;
+			}else if(searchField.equalsIgnoreCase("Supplier Name")){
+				fieldName = KEY_SUPL_NAME;
+			}
+			
+			appendSearchCriteria = " AND " + fieldName + " LIKE '%" + searchFieldValue + "%'";
+		}
+		
+		String whereClause = KEY_IS_DELETED + " = ? AND " + KEY_IS_SYNCED + " = ? " + appendSearchCriteria;
 		String whereArgs[] = new String[]{"0","0"};
 
 		Cursor cursor = db.query(TABLE_PO_ENTRY, null, whereClause, whereArgs, null, null, KEY_ORDER_BY);

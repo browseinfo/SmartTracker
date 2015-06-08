@@ -315,7 +315,7 @@ public class LoginActivity extends Activity {
 					
 					db.insertPOEntry(poEntry);
 					
-					Intent nextActivityIntent = new Intent(LoginActivity.this, ListPOSummaryActivity.class);
+					Intent nextActivityIntent = new Intent(LoginActivity.this, SearchPOActivity.class);
 //					Intent nextActivityIntent = new Intent(LoginActivity.this, ViewPODetailsActivity.class);
 					nextActivityIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(nextActivityIntent);
